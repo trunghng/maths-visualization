@@ -27,10 +27,10 @@ def square_wave(theta, n_terms):
 
 fig = plt.figure()
 ax = plt.axes(xlim=(-5, 5), ylim=(-2, 3))
-f1, = ax.plot([], [], lw=2, label=r'$f(x)=f_1(x)$')
-f2, = ax.plot([], [], lw=2, label=r'$f(x)=f_1(x)+f_2(x)$')
-f3, = ax.plot([], [], lw=2, label=r'$f(x)=f_1(x)+f_2(x)+f_3(x)$')
-f4, = ax.plot([], [], lw=2, label=r'$f(x)=f_1(x)+f_2(x)+f_3(x)+f_4(x)$')
+f1, = ax.plot([], [], lw=2, label=r'$f(\theta)=f_1(\theta)$')
+f2, = ax.plot([], [], lw=2, label=r'$f(\theta)=f_1(\theta)+f_2(\theta)$')
+f3, = ax.plot([], [], lw=2, label=r'$f(\theta)=f_1(\theta)+f_2(\theta)+f_3(\theta)$')
+f4, = ax.plot([], [], lw=2, label=r'$f(\theta)=f_1(\theta)+f_2(\theta)+f_3(\theta)+f_4(\theta)$')
 ax.legend(loc='upper right')
 
 def init():

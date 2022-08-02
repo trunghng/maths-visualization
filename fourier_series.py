@@ -26,7 +26,7 @@ def square_wave(theta, n_terms):
     return f
 
 fig = plt.figure()
-ax = plt.axes(xlim=(-10, 10), ylim=(-2, 2))
+ax = plt.axes(xlim=(-5, 5), ylim=(-2, 2))
 f1, = ax.plot([], [], lw=2)
 f2, = ax.plot([], [], lw=2)
 f3, = ax.plot([], [], lw=2)
@@ -40,10 +40,10 @@ def init():
     return f1, f2, f3, f4,
 
 def animate(i):
-    x1 = np.linspace(-10, 10, 1000)
-    x2 = np.linspace(-10, 10, 1000)
-    x3 = np.linspace(-10, 10, 1000)
-    x4 = np.linspace(-10, 10, 1000)
+    x1 = np.linspace(-5, 5, 1000)
+    x2 = np.linspace(-5, 5, 1000)
+    x3 = np.linspace(-5, 5, 1000)
+    x4 = np.linspace(-5, 5, 1000)
     y1 = square_wave(x1 - 0.01 * i, 1)
     y2 = square_wave(x2 - 0.01 * i, 2)
     y3 = square_wave(x3 - 0.01 * i, 3)

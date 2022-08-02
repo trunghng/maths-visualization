@@ -26,11 +26,12 @@ def square_wave(theta, n_terms):
     return f
 
 fig = plt.figure()
-ax = plt.axes(xlim=(-5, 5), ylim=(-2, 2))
-f1, = ax.plot([], [], lw=2)
-f2, = ax.plot([], [], lw=2)
-f3, = ax.plot([], [], lw=2)
-f4, = ax.plot([], [], lw=2)
+ax = plt.axes(xlim=(-5, 5), ylim=(-2, 3))
+f1, = ax.plot([], [], lw=2, label=r'$f(x)=f_1(x)$')
+f2, = ax.plot([], [], lw=2, label=r'$f(x)=f_1(x)+f_2(x)$')
+f3, = ax.plot([], [], lw=2, label=r'$f(x)=f_1(x)+f_2(x)+f_3(x)$')
+f4, = ax.plot([], [], lw=2, label=r'$f(x)=f_1(x)+f_2(x)+f_3(x)+f_4(x)$')
+ax.legend(loc='upper right')
 
 def init():
     f1.set_data([], [])
@@ -54,5 +55,6 @@ def animate(i):
     f4.set_data(x4, y4)
     return f1, f2, f3, f4,
 
-anim = animation.FuncAnimation(fig, animate, init_func=init, frames=200, interval=20, blit=True)
+anim = animation.FuncAnimation(fig, animate, init_func=init, frames=100, interval=20, blit=True)
 anim.save('./fourier_series.gif', writer='imagemagick', fps=30)
+plt.show()

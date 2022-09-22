@@ -10,7 +10,7 @@ def f_prime(x: float) -> float:
     return 2 * x
 
 
-def newton_method(x: float, order: int) -> None:
+def newtons_method(x: float, order: int) -> None:
     for n in range(1, order):
         fx = f(x)
         plt.scatter(x, fx, c='black')
@@ -22,19 +22,21 @@ def newton_method(x: float, order: int) -> None:
         plt.scatter(x, 0, c='black')
         ax.annotate(f'x{n+1}', (x, 0), (x, -1))
 
-x = np.arange(0, 6, 0.01)
-fx = f(x)
-x1 = 4.5
-order = 4
 
-fig, ax = plt.subplots()
-plt.plot(x, np.zeros(x.shape), c='black')
-plt.plot(x, fx, c='red')
-ax.annotate('f(x)', (5.5, f(5.5)), (5.5, f(5.5) - 0.7))
-plt.scatter(x1, 0, c='black')
-ax.annotate(f'x1', (x1, 0), (x1, -1))
-newton_method(x1, order)
+if __name__ == '__main__':
+    x = np.arange(0, 6, 0.01)
+    fx = f(x)
+    x1 = 4.5
+    order = 4
 
-plt.xlim(0, 6)
-plt.savefig('../../images/newtons-method.png')
-plt.close()
+    fig, ax = plt.subplots()
+    plt.plot(x, np.zeros(x.shape), c='black')
+    plt.plot(x, fx, c='red')
+    ax.annotate('f(x)', (5.5, f(5.5)), (5.5, f(5.5) - 0.7))
+    plt.scatter(x1, 0, c='black')
+    ax.annotate(f'x1', (x1, 0), (x1, -1))
+    newtons_method(x1, order)
+
+    plt.xlim(0, 6)
+    plt.savefig('../../images/newtons-method.png')
+    plt.close()

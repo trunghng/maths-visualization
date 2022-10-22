@@ -11,7 +11,7 @@ def f_prime(x: float) -> float:
     return 2 * x - 2
 
 
-def newtons_method(x: float, order: int, img_paths) -> None:
+def newtons_method(x: float, order: int, img_paths: str) -> None:
     for n in range(1, order):
         fx = f(x)
         plt.scatter(x, fx, c='black')

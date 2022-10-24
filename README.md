@@ -1,1 +1,1 @@
-Math visualization
+Visualization collection

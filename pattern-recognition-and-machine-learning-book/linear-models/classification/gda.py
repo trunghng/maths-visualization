@@ -52,13 +52,10 @@ for k in range(X.shape[0]):
     for n in range(X.shape[1]):
         x = X[k, n]
         k_pred = posterior(x, w, w0)
-        plt.scatter(x[0], x[1], c=colors[k_pred], 
-            alpha=0.5, marker=markers[k])
+        plt.scatter(x[0], x[1], c=colors[k_pred], alpha=0.5, marker=markers[k])
         if k_pred == k:
             correct += 1
 
-print('Accuracy:', correct / np.sum(np.array(N)))
+print('Accuracy:', correct / sum(N)
 plt.savefig('../../images/gda.png')
 plt.close()
-
-
